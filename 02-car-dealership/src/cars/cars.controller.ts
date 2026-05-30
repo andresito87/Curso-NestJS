@@ -12,6 +12,7 @@ import { CarsService } from './cars.service';
 import { CreateCarDto } from './dto/create-car.dto';
 import { UpdateCarDto } from './dto/update-car.dto';
 
+// Los controladores manejan el enrutamiento y la operativa de uso de la api, controlan las peticiones
 @Controller('cars')
 export class CarsController {
   constructor(private readonly carsService: CarsService) {}

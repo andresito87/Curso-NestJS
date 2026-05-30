@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Car } from './interfaces/car.interface';
 import { CreateCarDto, UpdateCarDto } from './dto';
 
+// Los servicios son los encargados del manejo de los datos tanto internos como externos
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
