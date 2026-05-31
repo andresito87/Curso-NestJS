@@ -1,0 +1,320 @@
+{
+  "info": {
+    "_postman_id": "ff69ccc2-c747-4412-9f0c-59fd7912bb44",
+    "name": "CursoNestJS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19407551"
+  },
+  "item": [
+    {
+      "name": "Cars",
+      "item": [
+        {
+          "name": "GetAllCars",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetCarById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/cars/4a4440d9-ad1b-4247-a9c9-787e4a367ec8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cars",
+                "4a4440d9-ad1b-4247-a9c9-787e4a367ec8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Car",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "brand",
+                  "value": "VolksWagen",
+                  "type": "text",
+                  "uuid": "840b98d8-1d89-4f57-97b0-f876e22da613"
+                },
+                {
+                  "key": "model",
+                  "value": "Golf",
+                  "type": "text",
+                  "uuid": "e79c0ec2-8abf-4226-a6f2-10c7c03ca171"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Car",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "id",
+                  "value": "319795ed-6995-4fcc-8cb9-ae830797321a",
+                  "type": "text",
+                  "uuid": "df0fcd54-a514-4026-8266-d23f4e171261",
+                  "disabled": true
+                },
+                {
+                  "key": "model",
+                  "value": "Corolla2",
+                  "type": "text",
+                  "uuid": "e79c0ec2-8abf-4226-a6f2-10c7c03ca171"
+                },
+                {
+                  "key": "brand",
+                  "value": "Toyota2",
+                  "type": "text",
+                  "uuid": "2641f531-caf2-45e9-8b9b-71cf6a5d5043",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/cars/dad23d06-a54b-45a3-8c6c-d87d5bed7fc2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cars",
+                "dad23d06-a54b-45a3-8c6c-d87d5bed7fc2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Car",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "brand",
+                  "value": "Volvo",
+                  "type": "text",
+                  "uuid": "840b98d8-1d89-4f57-97b0-f876e22da613",
+                  "disabled": true
+                },
+                {
+                  "key": "model",
+                  "value": "XC40",
+                  "type": "text",
+                  "uuid": "e79c0ec2-8abf-4226-a6f2-10c7c03ca171",
+                  "disabled": true
+                },
+                {
+                  "key": "id",
+                  "value": "dasdasdasdas",
+                  "type": "text",
+                  "uuid": "fd159246-5e08-4588-99c9-c10152272baf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/cars/c4bd14d0-ce82-4fb3-8fd5-3614a6d334d6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cars",
+                "c4bd14d0-ce82-4fb3-8fd5-3614a6d334d6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Brands",
+      "item": [
+        {
+          "name": "GetAllBrands",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/brands",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "brands"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetBrandById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/brands/fa8c8687-ab32-4a8a-8476-a0a0dee1d998",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "brands",
+                "fa8c8687-ab32-4a8a-8476-a0a0dee1d998"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Brand",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"VolksWagen\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/brands",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "brands"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Brand",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Toyota2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/brands/fa8c8687-ab32-4a8a-8476-a0a0dee1d998",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "brands",
+                "fa8c8687-ab32-4a8a-8476-a0a0dee1d998"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Brand",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/brands/fa8c8687-ab32-4a8a-8476-a0a0dee1d998",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "brands",
+                "fa8c8687-ab32-4a8a-8476-a0a0dee1d998"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "SeedDB",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/seed",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "seed"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
