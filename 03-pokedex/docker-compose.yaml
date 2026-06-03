@@ -1,0 +1,19 @@
+services:
+  db:
+    # Official MongoDB Docker image:
+    # https://hub.docker.com/_/mongo
+    image: mongo:8.0
+    container_name: pokedex-mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo123
+      MONGO_INITDB_DATABASE: nest-pokemon
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+
+volumes:
+  mongo_data:
+  mongo_config:
