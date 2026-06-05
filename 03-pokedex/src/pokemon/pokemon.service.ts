@@ -10,6 +10,7 @@ import { MongoServerError } from 'mongodb';
 import { Pokemon, PokemonDocument } from './entities/pokemon.entity';
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
+import { PaginationDto } from '../common/dto/pagination.dto';
 
 @Injectable()
 export class PokemonService {
@@ -37,8 +38,15 @@ export class PokemonService {
     return null;
   }
 
-  findAll() {
-    return this.pokemonModel.find();
+  findAll(paginationDto: PaginationDto) {
+    const { limit = 10, offset = 0 } = paginationDto;
+
+    return this.pokemonModel
+      .find() // recupera resgistro de MongoDB
+      .limit(limit) // Cantidad de registros que utiliza en la respuesta
+      .skip(offset) // Indica la posición a partir de la cual utilizará como respuesta, descartando anteriores posiciones
+      .sort({ no: 1 }) // Ordena la respuesta por el campo no de forma ascendente
+      .select('-__v'); // Quita ese campo en la respuesta
   }
 
   async findOne(term: string) {
@@ -95,6 +103,14 @@ export class PokemonService {
     }
 
     return;
+  }
+
+  async removeAll() {
+    await this.pokemonModel.deleteMany();
+  }
+
+  async createAll(createPokemonDto: CreatePokemonDto[]) {
+    await this.pokemonModel.insertMany(createPokemonDto);
   }
 
   private handleExceptions(error: unknown) {

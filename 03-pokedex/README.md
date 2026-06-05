@@ -39,26 +39,32 @@ npm i -g @nestjs/cli
 
 ## Development setup
 
-Clone the repository:
+1.-Clone the repository:
 
 ```bash
 git clone <repository-url>
 cd <project-folder>
 ```
 
-Install dependencies:
+2.-Install dependencies:
 
 ```bash
 yarn install
 ```
 
-Start the MongoDB database:
+3.-Start the MongoDB database:
 
 ```bash
 docker compose up -d
 ```
 
-Run the NestJS project in development mode:
+4.-Build DB data with the seeding endpoint:
+
+```bash
+http://localhost:3000/api/v2/seed
+```
+
+5.-Run the NestJS project in development mode:
 
 ```bash
 yarn start:dev

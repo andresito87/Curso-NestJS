@@ -15,6 +15,9 @@ async function bootstrap() {
       whitelist: true,
       forbidNonWhitelisted: true,
       transform: true,
+      transformOptions: {
+        enableImplicitConversion: true, // Transforma implícitamente los tipos de datos recibidos en queryparams de las peticiones
+      },
     }),
   );
 
