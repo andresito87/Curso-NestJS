@@ -46,28 +46,47 @@ git clone <repository-url>
 cd <project-folder>
 ```
 
-2.-Install dependencies:
+3.- Clone the file `.env.example` and rename it to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+4.-Open the `.env` file and update the database connection values if necessary.
+
+
+5.-Install dependencies:
 
 ```bash
 yarn install
 ```
 
-3.-Start the MongoDB database:
+6.-Start the MongoDB database:
 
 ```bash
 docker compose up -d
 ```
 
-4.-Build DB data with the seeding endpoint:
+7.-Build DB data with the seeding endpoint:
 
 ```bash
 http://localhost:3000/api/v2/seed
 ```
 
-5.-Run the NestJS project in development mode:
+8.-Run the NestJS project in development mode:
 
 ```bash
 yarn start:dev
+```
+
+## Run the project in production mode
+
+1.-Create ```.env.prod``` file with production environment variables.
+
+2.-Build the new image with docker file and run the containers with docker-compose:
+
+```bash
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
 ```
 
 ## Docker commands

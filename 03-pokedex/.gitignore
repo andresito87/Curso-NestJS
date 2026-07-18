@@ -41,10 +41,15 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 .env.local
+.env.prod
 
 # temp directory
 .temp
 .tmp
+
+# lock files
+package-lock.json
+yarn.lock
 
 # Runtime data
 pids

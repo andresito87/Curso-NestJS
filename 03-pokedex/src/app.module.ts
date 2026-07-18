@@ -6,17 +6,21 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
+import { EnvConfiguration } from './config/app.config';
+import { JoiValidationSchema } from './config/joi.validation';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [EnvConfiguration], // Carga la configuración de la app con las variables de entorno
+      validationSchema: JoiValidationSchema, // Imponemos reglas de validación en las variables de entorno
+    }),
     // Esta configuración sirve para servir contenido estático con la api desde el directorio public
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
     PokemonModule,
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
     // conexión a MongoDB para NestJS, la url de conexión esta en variables de entorno
     MongooseModule.forRootAsync({
       inject: [ConfigService],
@@ -29,6 +33,7 @@ import { SeedModule } from './seed/seed.module';
 
         return {
           uri: mongoUri,
+          dbName: 'pokemonsdb',
         };
       },
     }),
