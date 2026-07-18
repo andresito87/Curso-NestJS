@@ -56,19 +56,29 @@ La línea de trabajo se apoya en TypeScript como base, NestJS como framework pri
 
 ## Cómo ejecutarlo
 
-Desde la carpeta correspondiente a cada parte, ejecuta:
+Desde la carpeta correspondiente a cada parte revisa el archivo `README.md` para instrucciones específicas de instalación y ejecución. Generalmente, los pasos incluyen:
 
-```bash
-npm install
-npm run dev
-```
+1. Clonar el repositorio:
+  
+   ```bash
+   git clone <repository-url>
+   ```
 
-Otras tareas útiles:
+2. Instalar dependencias:
+  
+   ```bash
+    npm install
+    ```
+  
+3. Ejecutar la aplicación:
+  
+    ```bash
+    npm run start
+    ```
 
-```bash
-npm run build
-npm run preview
-```
+## Documentación
+
+En ```docs``` se encuentra la colección de cada proyecto para Postman, incluyendo ejemplos de peticiones, respuestas y documentación de endpoints.
 
 ## Referencias
 
